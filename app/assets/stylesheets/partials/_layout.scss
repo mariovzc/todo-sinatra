@@ -1,0 +1,24 @@
+/* setup your layout, columns etc. */
+footer, header {
+  @include span($total-columns);
+}
+
+.container {
+  @include container;
+}
+
+#main {
+  @include span($two-thirds);
+
+  @include susy-breakpoint($breakpoint, 12) {
+    @include span($total-columns);
+  }
+}
+
+#sidebar {
+  @include span($one-third omega);
+
+  @include susy-breakpoint($breakpoint, 12) {
+    @include span($total-columns);
+  }
+}
