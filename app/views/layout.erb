@@ -13,7 +13,8 @@
     <link rel="apple-touch-icon" sizes="144x144" href="<%= image_path('apple-touch-icon-144x144-precomposed.png') %>">
     <title><%= @title %></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="<%= stylesheet_path('style') %>" media="all">
     <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -24,7 +25,10 @@
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
+    <%= partial('partials/nav')%>
       <%= yield %>
+    <%= partial('partials/footer')%>
+
     <!-- JavaScripts and such -->
     <!-- this is the best solution I've found for using jQuery 2 when possible -->
     <!-- sauce: http://blog.jquery.com/2013/03/01/jquery-2-0-beta-2-released/ -->

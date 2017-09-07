@@ -9,7 +9,11 @@
             <a href="/new" class="button is-primary is-inverted">Nueva Tarea</a>
           </div>
         <%end%>
-        <% @tasks.each do |task|%>
+      </div>
+    </div>
+    <div class="columns is-multiline">
+      <% @tasks.each do |task|%>
+        <div class="column is-4">
           <div class="box">
             <article class="media">
               <div class="media-content">
@@ -24,11 +28,11 @@
                 <nav class="level is-mobile center">
                   <div class="action-links">
                     <%if task['done'] == false%>
-                    <a class="level-item">
+                    <a id="<%=task['id']%>-update" href="javascript:void(0);" class="level-item update-task">
                       <span class="icon is-medium"><i class="fa fa-check"></i></span>
                     </a>
                     <%end%>
-                    <a class="level-item danger">
+                    <a id="<%=task['id']%>-delete" class="level-item danger delete-task">
                       <span class="icon is-medium"><i class="fa fa-trash"></i></span>
                     </a>
                   </div>
@@ -36,8 +40,8 @@
               </div>
             </article>
           </div>
-        <%end%>
-      </div>
+        </div>
+      <%end%>
     </div>    
   </div>
 </section>

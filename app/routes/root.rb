@@ -13,3 +13,10 @@ post '/create' do
   Tarea.create(params[:title])
   redirect "/"
 end
+put '/task/:id' do
+  Tarea.update(params[:id])
+end
+
+delete '/task/:id' do
+  Tarea.destroy(params[:id])
+end
