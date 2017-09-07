@@ -11,7 +11,6 @@
 # = get bundler loaded
 require 'rubygems'
 require 'bundler/setup'
-
 # load what we need
 Bundler.require( :sinatra, :assorted, :assets, :sprockets)
 

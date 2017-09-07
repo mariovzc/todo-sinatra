@@ -1,34 +1,17 @@
 @import 'compass';
 @import 'susy';
 
-@import 'partials/variables';
-@import 'partials/normalize';
-@import 'partials/h5bp';
-@import 'partials/base';
-@import "partials/layout";
-
-/* Drop your styles in here! */
-header {
-  h1 {
-    @include text-shadow(#ccc 1px 1px 3px);
-
-    font-weight: bold;
-    letter-spacing: -1px;
-    margin: 0.8em 0;
+$danger-color:#F44336;
+$danger-color-hover: #B71C1C; 
+.action-links{
+  text-align: center;
+  width: 100%;
+  display: inline-flex;
+  display: -webkit-inline-flex;
+  .danger{
+    color: $danger-color !important;
+    &:hover {
+      color: $danger-color-hover !important ;
+    }
   }
 }
-
-#sidebar {
-  color: #777;
-
-  img {
-    @include box-shadow(#ccc 1px 1px 3px);
-
-    background: #eee;
-    border: 1px solid #bbb;
-    display: block;
-    padding: 0.25em;
-    max-width: 97%;
-  }
-}
-

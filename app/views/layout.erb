@@ -15,32 +15,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="<%= stylesheet_path('style') %>" media="all">
+    <link rel=stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="<%= javascript_path('modernizr') %>"></script>
+    
   </head>
   <body>
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
-    <div class="container">
-      <header>
-        <h1>Hey There!</h1>
-      </header>
-    </div><!-- .container -->
-    <div class="container">
-      <div id="main" role="main">
-        <%= yield %>
-      </div>
-      <aside id="sidebar">
-        <img src='<%= image_path('llama.jpeg') %>'>
-        <p>The Llama sees all.</p>
-      </aside>
-    </div><!-- .container -->
-    <div class="container">
-      <footer>
-        &copy; 2012 oh you know :)
-      </footer>
-    </div> <!-- .container -->
-
+      <%= yield %>
     <!-- JavaScripts and such -->
     <!-- this is the best solution I've found for using jQuery 2 when possible -->
     <!-- sauce: http://blog.jquery.com/2013/03/01/jquery-2-0-beta-2-released/ -->

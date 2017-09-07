@@ -13,8 +13,8 @@ group :sinatra do
     sinatra/namespace
     sinatra/content_for
   )
-  require 'make_todo'
-  
+  gem 'make_todo'
+  gem 'httparty'
 end
 
 group :assorted do
@@ -45,4 +45,9 @@ group :sprockets do
   gem 'sprockets'
   gem 'sprockets-sass'
   gem 'sprockets-helpers'
+end
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
 end

@@ -1,18 +1,36 @@
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p><%= link_to 'Go home', '/' %> <code><==</code> <em>made with <code>link_to</code> helper!</em></p>
-
-<h2>Form Tag Helpers</h2>
-<form action='/'>
-  <p>
-    <b><code>input_for</code></b><br>
-    <%= input_for 'input' %><br>
-    <%= link_to 'See this filled with "here is some input"', url_with_params('/', :input => 'here is some input') %>
-    <%= '<br>notice how the value gets set to the value of <code>params[:input]</code> :)' if params[:input] %>
-  </p>
-  <p>
-    <b><code>select_for</code></b><br>
-    <%= select_for 'select', { 'Nothing' => :zero, 'One' => :one, 'The second' => :two } %><br>
-    <%= link_to 'See the second option selected', '/?select=one' %>
-    <%= '<br>oooooh... <b>ahhhhhh</b>' if params[:select] %>
-  </p>
-</form>
+<section class="section">
+  <div class="container">
+    <div class="columns is-mobile is-centered">
+      <div class="column is-half is-narrow">
+        <% @tasks.each do |task|%>
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content has-text-centered">
+                  <p>
+                    <h2><strong>Tarea: <%=task['title'].blank? ? 'Sin nombre' : task['title']%></strong></h2>
+                    <small>Estado: <%= task['done'] == false ? 'Incompleto' : 'Completado' %></small>
+                    <br>
+                  </p>
+                </div>
+                <hr>
+                <nav class="level is-mobile center">
+                  <div class="action-links">
+                    <%if task['done'] == false%>
+                    <a class="level-item">
+                      <span class="icon is-medium"><i class="fa fa-check"></i></span>
+                    </a>
+                    <%end%>
+                    <a class="level-item danger">
+                      <span class="icon is-medium"><i class="fa fa-trash"></i></span>
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </article>
+          </div>
+        <%end%>
+      </div>
+    </div>    
+  </div>
+</section>
