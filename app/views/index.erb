@@ -2,6 +2,13 @@
   <div class="container">
     <div class="columns is-mobile is-centered">
       <div class="column is-half is-narrow">
+        <% if @tasks.blank? %>
+          <div class="notification is-primary has-text-centered ">
+            <p class="is-size-3">Hola, parece que no hay tareas disponibles.</p>
+            <br>
+            <a href="/new" class="button is-primary is-inverted">Nueva Tarea</a>
+          </div>
+        <%end%>
         <% @tasks.each do |task|%>
           <div class="box">
             <article class="media">

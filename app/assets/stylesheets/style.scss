@@ -3,15 +3,19 @@
 
 $danger-color:#F44336;
 $danger-color-hover: #B71C1C; 
-.action-links{
-  text-align: center;
-  width: 100%;
-  display: inline-flex;
-  display: -webkit-inline-flex;
-  .danger{
-    color: $danger-color !important;
-    &:hover {
-      color: $danger-color-hover !important ;
+html{
+  background-color: #F5F5F5 !important;
+  .action-links{
+    text-align: center;
+    width: 100%;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    .danger{
+      color: $danger-color !important;
+      &:hover {
+        color: $danger-color-hover !important ;
+      }
     }
   }
 }
+

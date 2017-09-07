@@ -3,7 +3,7 @@ require 'rubygems'
 require 'bundler/setup'
 require './app/core_extensions/try'
 
-Bundler.require(:assets, :sprockets, :development)
+Bundler.require(:assets, :sprockets)
 
 # The default, if you just run `rake` in this directory, will list all the available tasks
 task :default do
