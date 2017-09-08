@@ -32,7 +32,8 @@ $('select').on('change', function() {
   getTasks();
   var type = (this.value == 'complete') ? true : false;
   var html = "";
-  if (this.value == "all") {
+  if (this.value === "all") {
+    html = DisplayTasks(tasks);
   }else{
     var filtered = tasks.filter(function (el) {
       return el.done == type;
