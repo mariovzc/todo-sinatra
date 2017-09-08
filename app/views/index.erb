@@ -8,10 +8,18 @@
             <br>
             <a href="/new" class="button is-primary is-inverted">Nueva Tarea</a>
           </div>
+        <%else%>
+          <div class="select is-medium">
+            <select>
+              <option value="all">Todos</option>
+              <option value="complete">Completadas</option>
+              <option value="incomplete">Sin Completar </option>
+            </select>
+          </div>
         <%end%>
       </div>
     </div>
-    <div class="columns is-multiline">
+    <div class="columns is-multiline data-list">
       <% @tasks.each do |task|%>
         <div class="column is-4">
           <div class="box">
