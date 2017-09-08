@@ -7,7 +7,16 @@ function setTaskActions(){
     executeAjax(this.id.split('-')[0],"DELETE","Tarea Eliminada");
   });
 }
+var tasks = [];
+function getTasks(){
+  $.get('/all',function(data){
+    tasks = data;
+  });
+
+}
 setTaskActions();
+getTasks();
+
 function executeAjax(id,type,message){
   $.ajax({
     url: 'task/' + id,
@@ -18,15 +27,9 @@ function executeAjax(id,type,message){
     },
   });
 }
-var tasks = [];
-$(document).ready(function(){
-  $.get('/all',function(data){
-    tasks = data;
-  });
-});
-
 
 $('select').on('change', function() {
+  getTasks();
   var type = (this.value == 'complete') ? true : false;
   var html = "";
   if (type == "all") {
